@@ -28,6 +28,8 @@ p{
 }
 
 a{
+
+    text-decoration: none;
     &:hover{
         text-decoration: none;
     }
@@ -89,10 +91,6 @@ main{
         background-position: center;
     }
 
-    .gallery-section{
-        padding: 81px 0;
-    }
-
     .section-title{
         font-size: 25px;
         font-weight: 600;
@@ -137,5 +135,115 @@ main{
 
         }
 
+
+        .widget-about{
+            text-align: center;
+
+            img{
+                width: 40px;
+                border-radius: 50%;
+                margin-bottom: 10px;
+            }
+        }
+        
+        .widget-categories{
+            ul{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            a{
+                display: block;
+                padding: 10px 0;
+                text-align: center;
+            }
+        }
+    }
+
+    
+    .gallery-section{
+        padding: 81px 0;
+
+        .gallery-item{
+            margin-bottom: 30px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            box-shadow: 0 0 5px $color-border;
+            position: relative;
+
+            &:hover{
+                transform: translateY(-10px);
+                box-shadow: 0 8px 5px $color-border;
+
+                .gallery-item-info{
+                    background: $white;
+                }
+            }
+
+            img{
+                width: 100%;
+                height: 378px;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            .gallery-item-info{
+                padding: 30px;
+                text-align: center;
+                width: 100%;
+                position: absolute;
+                bottom: 35px;
+                left: 0;
+                background: rgba($white, 0.9);
+                transition: all 0.7s ease;
+
+                h4{
+                    font-size: 16px;
+                    margin-bottom: 10px;
+                    padding-bottom: 12px;
+                    position: relative;
+                    text-transform: uppercase;
+                    font-weight: 600;
+
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        display: block;
+                        height: 1px;
+                        width: 40px;
+                        background: $primary;
+                        left: 50%;
+                        bottom: 0%;
+                        transform: translateX(-50%);
+                    }
+                }
+
+                p{
+                    font-size: 14px;
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+}
+
+
+// Footer
+
+footer{
+    border-top: 1px solid $color-border;
+    padding: 30px 0;
+    text-align: center;
+}
+
+
+.portfolio-modal{
+    input{
+        width: 100%;
+        border: 1px solid $color-border;
+        font-size: 16px;
+        padding: 10px;
+        margin-bottom: 10px;
     }
 }

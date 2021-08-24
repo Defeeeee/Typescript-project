@@ -33,9 +33,9 @@
                   <a href="https://www.instagram.com/defe.ph/">Instagram</a>
                 </li>
               </ul>
-              <div class="login">
-                <a href="#" class="btn btn-outline-primary">Iniciar Sesion</a>
-              </div>
+              <div class="login" id="loginModalButtonContainer">
+                <a href="#loginModal" class="btn btn-outline-primary" data-toggle="modal">Iniciar sesión</a>
+            </div>
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@
 
       <section class="gallery-section">
         <div class="container">
-          <h2 class="section-title">Latests photos</h2>
+          <h2 class="section-title">Latest photos</h2>
 
           <div class="row">
             <div class="col-md-3">
@@ -74,7 +74,8 @@
                   </div>
                 </div>
 
-                <button class="btn btn-primary btn-block">Agregar foto</button>
+                
+                <div id="addGalleryItemButtonContainer"></div>
               </aside>
             </div>
 
@@ -159,22 +160,47 @@
 
 
     <footer>
-        <p>&copy: Todos los derechos reservados</p>
+        <p>&copy Defe ph | 2021 | Todos los derechos reservados</p>
     </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
-      integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
-      integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-      crossorigin="anonymous"
-    ></script>
+
+
+    <div class="modal fade portfolio-modal" id="loginModal">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title">Iniciar sesión</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <form>
+                  <div class="form-group">
+                      <input type="text" name="username" id="username" placeholder="Usuario">
+                  </div>
+                  <div class="form-group">
+                      <input type="password" name="password" id="password" placeholder="Contraseña">
+                  </div>
+                  <button data-dismiss="modal" type="button" class="btn btn-primary btn-block" id="loginButton">Iniciar sesión</button>
+              </form>
+          </div>
+          </div>
+      </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script src="node_modules/systemjs/dist/system.js"></script>
+  <script>
+      System.config({
+          baseURL: '/',
+          defaultJSExtensions: true
+      });
+      System.import('js/main.js');
+  </script>
+
   </body>
 </html>
