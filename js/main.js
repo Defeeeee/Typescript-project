@@ -5,6 +5,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var users_1 = require("./users");
 var login_1 = __importDefault(require("./login"));
+var loggedIn_1 = __importDefault(require("./loggedIn"));
+// Chack if logged in
+loggedIn_1.default();
 document.getElementById('loginButton').addEventListener('click', function (e) {
     e.preventDefault();
     var username = document.getElementById('username').value;
